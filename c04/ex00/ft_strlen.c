@@ -6,15 +6,15 @@
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:02:06 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/13 09:03:54 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/13 11:55:44 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')

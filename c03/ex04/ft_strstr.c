@@ -6,7 +6,7 @@
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 18:58:04 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/12 23:24:30 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/13 11:56:21 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int i;
+	int	i;
 	int	j;
 
 	if (*to_find == '\0')

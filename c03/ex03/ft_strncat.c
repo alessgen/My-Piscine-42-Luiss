@@ -6,7 +6,7 @@
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:08:24 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/12 21:39:49 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/13 11:56:13 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -25,7 +25,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	{
 		dest[i] = src[j];
 		i++;
-		j++; 
+		j++;
 	}
 	dest[i] = '\0';
 	return (dest);

@@ -6,13 +6,13 @@
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 21:13:04 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/12 14:49:42 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/13 17:22:04 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strlowcase(char *str)
+char	*ft_lowcase(char *str)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ char	*ft_strcapitalize(char *str)
 	int	i;
 
 	i = 0;
-	ft_strlowcase(str);
+	ft_lowcase(str);
 	while (str[i] != '\0')
 	{
 		if (str[0] >= 'a' && str[0] <= 'z')

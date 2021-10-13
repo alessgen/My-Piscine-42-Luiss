@@ -1,44 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 15:26:35 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/13 17:29:15 by agenoves         ###   ########.fr       */
+/*   Created: 2021/10/13 17:36:48 by agenoves          #+#    #+#             */
+/*   Updated: 2021/10/13 17:45:57 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+int ft_iterative_factorial(int nb)
 {
-	write(1, &c, 1);
-}
+	int	i;
+	int	factorial;
 
-void	ft_convert_hexa(char c)
-{
-	char	*base;
-
-	base = "0123456789abcdef";
-	ft_putchar(base[c / 16]);
-	ft_putchar(base[c % 16]);
-}
-
-void	ft_putstr_non_printable(char *str)
-{
-	unsigned int	i;
-
-	while (*str != '\0')
-	{
-		if (*str < 32 || *str == 127)
-		{
-			ft_putchar('\\');
-			ft_convert_hexa(*str);
-		}
-		else
-			ft_putchar(*str);
-		str++;
-	}
+	if (nb < 0)
 }

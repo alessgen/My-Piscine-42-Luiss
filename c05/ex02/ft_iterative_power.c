@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 17:36:48 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/13 18:41:18 by agenoves         ###   ########.fr       */
+/*   Created: 2021/10/13 18:50:18 by agenoves          #+#    #+#             */
+/*   Updated: 2021/10/13 19:00:49 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_iterative_factorial(int nb)
+int	ft_iterative_power(int nb, int power)
 {
-	int	factorial;
+	int	i;
+	int	n;
 
-	factorial = 1;
-	if (nb < 0)
+	i = 1;
+	n = nb;
+	if (power < 0)
 		return (0);
-	if (nb == 0 || nb == 1)
+	if (power == 0)
 		return (1);
-	while (nb > 0)
-	{
-		factorial *= nb;
-		nb--;
-	}
-	return (factorial);
+	while (++i <= power)
+		nb = nb * n;
+	return (nb);
 }

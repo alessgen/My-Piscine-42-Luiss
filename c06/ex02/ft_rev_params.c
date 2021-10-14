@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 22:19:02 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/14 22:32:02 by agenoves         ###   ########.fr       */
+/*   Created: 2021/10/14 22:35:21 by agenoves          #+#    #+#             */
+/*   Updated: 2021/10/14 23:00:11 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,11 @@ void	ft_putstr(char *str)
 
 int	main(int argc, char **argv)
 {
-	int	i;
-
-	i = 1;
-	while (i < argc)
+	while (argc > 1)
 	{
-		ft_putstr(argv[i]);
-		write(1, "\n", 1);
-		i++;
+		ft_putstr(argv[argc - 1]);
+		write (1, "\n", 1);
+		argc--;
 	}
 	return (0);
 }

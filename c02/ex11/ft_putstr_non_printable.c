@@ -6,10 +6,11 @@
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:26:35 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/13 17:29:15 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/14 10:22:15 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -17,28 +18,30 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_convert_hexa(char c)
+bool	is_printable(char c)
 {
-	char	*base;
-
-	base = "0123456789abcdef";
-	ft_putchar(base[c / 16]);
-	ft_putchar(base[c % 16]);
+	return (c >= ' ' && c != 127);
 }
 
 void	ft_putstr_non_printable(char *str)
 {
-	unsigned int	i;
+	int				i;
+	unsigned char	cc;
 
-	while (*str != '\0')
+	i = 0;
+	while (true)
 	{
-		if (*str < 32 || *str == 127)
+		cc = str[i];
+		if (cc == '\0')
+			break ;
+		if (is_printable(cc))
+			ft_putchar(cc);
+		else
 		{
 			ft_putchar('\\');
-			ft_convert_hexa(*str);
+			ft_putchar("0123456789abcdef"[cc / 16]);
+			ft_putchar("0123456789abcdef"[cc % 16]);
 		}
-		else
-			ft_putchar(*str);
-		str++;
+		i++;
 	}
 }

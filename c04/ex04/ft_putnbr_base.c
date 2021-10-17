@@ -6,7 +6,7 @@
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:57:37 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/13 16:17:28 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/17 11:54:53 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int	check_base_valid(char *base)
 void	putnbr_recursive(long nbr, char *base, int base_l)
 {
 	char	number;
-	int		i;
 
 	if (nbr == 0)
 		return ;

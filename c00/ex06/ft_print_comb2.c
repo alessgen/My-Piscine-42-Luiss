@@ -6,7 +6,7 @@
 /*   By: agenoves <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 17:41:09 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/01 09:10:36 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/16 16:58:13 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_print_comb2(void)
 	char	a1;
 	char	a2;
 	char	b1;
-	char	b2;	
+	char	b2;
 	{
 		a1 = '0' - 1;
 		while (++a1 <= '9')

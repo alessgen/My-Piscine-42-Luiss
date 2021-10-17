@@ -6,7 +6,7 @@
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:13:26 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/13 17:45:14 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/17 11:53:56 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	ft_atoi(char *str)
 {
-	int	i;
 	int	sign;
 	int	number;
 

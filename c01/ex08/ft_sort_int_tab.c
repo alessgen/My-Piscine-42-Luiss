@@ -6,7 +6,7 @@
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 10:21:43 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/12 15:55:09 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/16 20:30:18 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
 	int	j;
-	int	t;
+	int	temp;
 
 	i = 0;
 	while (i < size)
@@ -26,12 +26,12 @@ void	ft_sort_int_tab(int *tab, int size)
 		{
 			if (tab[j] > tab[j + 1])
 			{
-				t = tab[j];
+				temp = tab[j];
 				if (j + 1 < size)
 				{
 					tab[j] = tab[j + 1];
 				}
-				tab[j + 1] = t;
+				tab[j + 1] = temp;
 			}
 			j++;
 		}

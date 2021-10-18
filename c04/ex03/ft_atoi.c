@@ -6,7 +6,7 @@
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:13:26 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/17 11:53:56 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/18 11:53:17 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,4 @@ int	ft_atoi(char *str)
 		str++;
 	}
 	return (number * sign);
-	if (*str < '0' || *str >= '9')
-		return (0);
 }

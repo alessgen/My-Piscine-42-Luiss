@@ -6,7 +6,7 @@
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 09:56:38 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/18 18:09:54 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/19 13:40:54 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,43 +23,31 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*tab;
-	int		i;
-	int		j;
+	int		a;
+	int		b;
+	int		c;
+	int		len;
 
-	i = 0;
-	j = 0;
-	while (i < size && size > 0)
-		j = j + ft_strlen(strs[i++]) + ft_strlen(sep);
-	tab = malloc((j + 1) * sizeof(char));
-	j = 0;
-	i = 0;
-	while (i < size)
+	a = 0;
+	b = 0;
+	c = 0;
+	len = 1;
+	while (a < size)
+		len = len + ft_strlen(strs[a++]) + ft_strlen(sep);
+	tab = malloc(sizeof(char *) * len);
+	a = -1;
+	while (++a < size)
 	{
-		ft_strcpy(tab + j, strs[i]);
-		j = j + ft_strlen(strs[i]);
-		if (i++ < size)
-		{
-			ft_strcpy(tab + j, sep);
-			j = j + ft_strlen(sep);
-		}
+		while (strs[a][b])
+			tab[c++] = strs[a][b++];
+		b = 0;
+		while (sep[b] && a < size - 1)
+			tab[c++] = sep[b++];
+		b = 0;
 	}
-	tab = '\0';
+	tab[c] = '\0';
 	return (tab);
 }

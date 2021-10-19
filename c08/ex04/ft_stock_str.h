@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 19:09:31 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/19 10:11:55 by agenoves         ###   ########.fr       */
+/*   Created: 2021/10/19 08:55:47 by agenoves          #+#    #+#             */
+/*   Updated: 2021/10/19 08:57:58 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
+#ifndef FT_STOCK_STR_H
+# define FT_STOCK_STR_H
 
-int	*ft_range(int min, int max)
+typedef struct s_stock_str
 {
-	int	*range;
-	int	i;
+	int		size;
+	char	*str;
+	char	*copy;
+}t_stock_str;
 
-	i = 0;
-	range = malloc(sizeof(int) * (max - min));
-	if (min >= max || range == 0)
-		return (0);
-	while (min < max)
-	{
-		range[i] = min;
-		i++;
-		min++;
-	}
-	return (range);
-}
+#endif

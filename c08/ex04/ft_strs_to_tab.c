@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 09:56:38 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/18 18:09:54 by agenoves         ###   ########.fr       */
+/*   Created: 2021/10/19 09:00:31 by agenoves          #+#    #+#             */
+/*   Updated: 2021/10/19 10:33:49 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdlib.h>
+#include "ft_stock_str.h"
 
 int	ft_strlen(char *str)
 {
@@ -23,43 +23,38 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcpy(char *dest, char *src)
+char	ft_strdup(char *src)
 {
-	int	i;
+	char	*dst;
+	int		i;
 
+	dst = (char *)malloc(sizeof(*dst) * (ft_strlen(src) + 1));
 	i = 0;
 	while (src[i] != '\0')
 	{
-		dest[i] = src[i];
+		dst[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	dst[i] = '\0';
+	return (dst);
 }
 
-char	*ft_strjoin(int size, char **strs, char *sep)
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	char	*tab;
-	int		i;
-	int		j;
+	t_stock_str	*string;
+	int			i;
 
 	i = 0;
-	j = 0;
-	while (i < size && size > 0)
-		j = j + ft_strlen(strs[i++]) + ft_strlen(sep);
-	tab = malloc((j + 1) * sizeof(char));
-	j = 0;
-	i = 0;
-	while (i < size)
+	string = (t_stock_str *) malloc(sizeof (t_stock_str) * (ac + 1));
+	if (string == 0)
+		return (0);
+	while (i < ac)
 	{
-		ft_strcpy(tab + j, strs[i]);
-		j = j + ft_strlen(strs[i]);
-		if (i++ < size)
-		{
-			ft_strcpy(tab + j, sep);
-			j = j + ft_strlen(sep);
-		}
+		string[i].size = ft_strlen(av[i]);
+		string[i].str = av[i];
+		string[i].copy = ft_strdup(av[i]);
+		i++;
 	}
-	tab = '\0';
-	return (tab);
+	string[i].str = 0;
+	return (string);
 }

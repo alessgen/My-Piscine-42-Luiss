@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_str.h                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 08:55:47 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/19 08:57:58 by agenoves         ###   ########.fr       */
+/*   Created: 2021/10/20 09:12:57 by agenoves          #+#    #+#             */
+/*   Updated: 2021/10/20 09:18:02 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_STR_H
-# define FT_STOCK_STR_H
+#include <unistd.h>
 
-typedef struct s_stock_str
+int	ft_strcmp(char *s1, char *s2)
 {
-	int		size;
-	char	*str;
-	char	*copy;
-}t_stock_str;
+	int	i;
 
-#endif
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
+}

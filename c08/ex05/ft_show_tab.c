@@ -6,51 +6,53 @@
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 12:15:38 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/19 16:55:34 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/20 15:39:29 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 #include "ft_stock_str.h"
+#include <limits.h> 
 
 void	ft_putchar(char c)
 {
 	write (1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void	ft_putstr(char *str)
 {
-	if (nb == -2147483648)
+	while (*str)
 	{
-		ft_putnbr(nb / 10);
-		ft_putchar('8');
+		write(1, str, 1);
+		str++;
 	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(nb *= -1);
-	}
-	else if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else if (nb <= 9)
-	{
-		ft_putchar(nb + 48);
-	}	
+	ft_putchar('\n');
 }
 
-void	ft_putstr(char	*str)
+void	ft_putnbr(int nb)
 {
-	int	i;
+	unsigned int	number;
 
-	i = 0;
-	while (str[i] != '\0')
+	if (nb == INT_MIN)
 	{
-		ft_putchar(str[i]);
-		i++;
+		ft_putchar('-');
+		ft_putchar('2');
+		nb = 147483648;
 	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		number = -nb;
+	}
+	else
+		number = nb;
+	if (number > 9)
+	{
+		ft_putnbr(number / 10);
+		number %= 10;
+	}
+	ft_putchar(number + '0');
 }
 
 void	ft_show_tab(struct s_stock_str *par)
@@ -60,11 +62,9 @@ void	ft_show_tab(struct s_stock_str *par)
 	while (par->str)
 	{
 		ft_putstr(par->str);
-		ft_putchar("\n");
 		ft_putnbr(par->size);
-		ft_putchar("\n");
+		ft_putchar('\n');
 		ft_putstr(par->copy);
-		ft_putchar("\n");
 		par++;
 	}
 }

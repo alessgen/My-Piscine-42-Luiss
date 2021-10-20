@@ -6,7 +6,7 @@
 /*   By: agenoves <agenoves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 09:00:31 by agenoves          #+#    #+#             */
-/*   Updated: 2021/10/19 10:33:49 by agenoves         ###   ########.fr       */
+/*   Updated: 2021/10/20 16:53:38 by agenoves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,43 +18,47 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 		i++;
 	return (i);
 }
 
-char	ft_strdup(char *src)
+char	*ft_strdup(char *str)
 {
-	char	*dst;
+	char	*copy;
 	int		i;
 
-	dst = (char *)malloc(sizeof(*dst) * (ft_strlen(src) + 1));
 	i = 0;
-	while (src[i] != '\0')
+	copy = malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (copy == '\0')
+		return (NULL);
+	while (str[i] != '\0')
 	{
-		dst[i] = src[i];
+		copy[i] = str[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	copy[i] = '\0';
+	return (copy);
 }
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	t_stock_str	*string;
+	t_stock_str	*tab;
 	int			i;
 
+	if (ac < 0)
+		ac = 0;
+	tab = malloc(sizeof(t_stock_str) * (ac + 1));
+	if (tab == '\0')
+		return (NULL);
 	i = 0;
-	string = (t_stock_str *) malloc(sizeof (t_stock_str) * (ac + 1));
-	if (string == 0)
-		return (0);
 	while (i < ac)
 	{
-		string[i].size = ft_strlen(av[i]);
-		string[i].str = av[i];
-		string[i].copy = ft_strdup(av[i]);
+		tab[i].size = ft_strlen(av[i]);
+		tab[i].str = av[i];
+		tab[i].copy = ft_strdup(av[i]);
 		i++;
 	}
-	string[i].str = 0;
-	return (string);
+	tab[i].str = 0;
+	return (tab);
 }

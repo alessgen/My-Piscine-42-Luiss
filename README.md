@@ -1,5 +1,5 @@
 ### Hi there👋
-### Welcome to my GitHub, enjoy!  -Eiji
+### Welcome to my GitHub, enjoy!  -JustSkill
 [![jaeskim's 42 stats](https://badge42.herokuapp.com/api/stats/agenoves)](https://github.com/alessgen/badge42)
 <!--
 **Just-Skill/Just-Skill** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
